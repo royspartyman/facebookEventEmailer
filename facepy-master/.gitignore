@@ -1,0 +1,8 @@
+*.pyc
+dist
+build
+*.egg-info
+.coverage
+.tox
+.python-version
+*.sublime-project
