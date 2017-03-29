@@ -44,3 +44,23 @@ Command examples
 .. code-block:: bash
 
     $ ./facebook-event.py -h --id 331218348435 --email test@gmail.com --password testPassword
+    
+Running on a Schedule
+----------------
+To run on a schedule, if you're on OSX, run crontab with the below command. If you're on Linux/Ubuntu, cd to your /etc/ and choose one of the approiate directories, like cron.daily, cron.weekly, etc.
+
+.. code-block:: bash
+
+    $ crontab -e
+
+Once you're editing a crontab, you add the specific time interval(the cron part) and the script you wish to run such as:
+
+.. code-block:: bash
+
+    0 8 * * 2 {path_to_python}/python3 /facebookEventEmailer/facebook-event.py events --id 331218348435 --email test@gmail.com --password testPassword
+
+After saving and exiting your changes your crontab will be created and running.
+
+The order of cron is minute, hour, day of month, month, day of week(0-6, Sunday = 0). You can read more about cron here: http://www.adminschoice.com/crontab-quick-reference
+    
+
